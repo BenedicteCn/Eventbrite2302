@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+require 'date'
+User.destroy_all
+Attendance.destroy_all
+Event.destroy_all
 
 5.times do
   user = User.create!(
@@ -25,8 +30,9 @@ end
     end_date: Faker::Date.in_date_period,
     duration: rand(1..99),
     price: rand(1..99),
-    location: Faker::Address.city
-  );
+    location: Faker::Address.city,
+    admin_id: User.all.sample.id
+  )
 end
 
 5.times do
