@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+      <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+    <div class="card-body">
+     <h1>A propos de cet évènement</h1>
+
+    <br>
+    <br>
+    <br>
+      <div class="row text-center">
+                        <p><h2><%= Event.find(params['id']).title%></h2></p>
+                        <br>
+                        <br>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1389/1389446.png" width="80" height="80">
+                        </span>
+                        <h4 class="my-3">When?</h4>
+                        <p class="text-muted"><%= Event.find(params['id']).start_date%></p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                          <img src="https://cdn-icons.flaticon.com/png/512/3425/premium/3425077.png?token=exp=1645524181~hmac=8f1f71537cacf29bea3898190d23e4d5" width="80" height="80">
+                        </span>
+                        <h4 class="my-3">Where?</h4>
+                        <p class="text-muted"><%= Event.find(params['id']).location%></p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                          <img src="https://cdn-icons.flaticon.com/png/512/5112/premium/5112238.png?token=exp=1645524271~hmac=075f5acd3c4cb46c64165bea2c87c046" width="80" height="80">
+                        </span>
+                        <h4 class="my-3">How much?</h4>
+                        <p class="text-muted"><%= Event.find(params['id']).price%>€</p>
+                    </div>
+                      <br>
+                      <br>
+                      <br>
+
+                      <p><strong>More about the event:</strong> <%= Event.find(params['id']).description%></p>
+
+                </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
