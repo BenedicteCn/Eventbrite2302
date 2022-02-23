@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+      <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  </head>
+<div class ='align-middle'>
+	<div class="card mt-5 ml-5 mr-5" style="height:350px">
+		<h5 class="card-title ml-5 pt-5 mb-2">Edit your profile</h5>
+	  <div class="card-body">
+		<%= form_for :user do |f| %>
+	<div class=" form-group">
+	<label class="card-title">First name:</label>
+	<%=f.text_field :first_name, class: 'form-control' %>
+	<label class="card-title">Last name:</label>
+	<%=f.text_field :last_name, class: 'form-control' %>
+	</div>
+	<div class="form-group">
+	    <button type="submit">Submit</button>
+	</div>
+<% end %>
+
+</html>
