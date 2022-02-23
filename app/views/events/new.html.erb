@@ -11,5 +11,57 @@
   </head>
   <body>
 
+  	<div class="container">
+			<div class="main">
+				<div class="main-center">
+
+				<h4>Create your own event!</h5>
+
+					<%= form_tag url_for(action: 'create'), method: "post" do %>
+
+						<div class="form-group">
+                  <p><%= label_tag 'Title' %></p>
+                  <p><%= text_field_tag(:title) %></p>
+						</div>
+
+						<div class="form-group">
+                  <p><%= label_tag 'Description' %></p>
+                  <p><%= text_field_tag(:description) %></p>
+						</div>
+
+            <div class="form-group">
+                  <p><%= label_tag 'Start date (please put this format: (''YYYY-MM-DD HH:mm:ss'')' %></p>
+                  <p><%= text_field_tag(:start_date) %></p>
+						</div>
+
+            <div class="form-group">
+                  <p><%= label_tag 'End date (please put this format: (''YYYY-MM-DD HH:mm:ss'')' %></p>
+                  <p><%= text_field_tag(:end_date) %></p>
+						</div>
+
+            <div class="form-group">
+                  <p><%= label_tag 'Duration (number of days)' %></p>
+                  <p><%= text_field_tag(:duration) %></p>
+						</div>
+
+            <div class="form-group">
+                  <p><%= label_tag 'Price (€)' %></p>
+                  <p><%= text_field_tag(:price) %></p>
+						</div>
+
+            <div class="form-group">
+                  <p><%= label_tag 'Location' %></p>
+                  <p><%= text_field_tag(:location) %></p>
+						</div>
+
+				<%= submit_tag "Create an event" %>
+
+        <% end %>
+
+					</form>
+				</div><!--main-center"-->
+			</div><!--main-->
+		</div><!--container-->
+
   </body>
 </html>
