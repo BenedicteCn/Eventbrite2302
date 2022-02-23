@@ -33,8 +33,10 @@ ActiveRecord::Schema.define(version: 2022_02_21_155251) do
     t.integer "duration"
     t.integer "price"
     t.string "location"
+    t.bigint "admin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_events_on_admin_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,10 +50,6 @@ ActiveRecord::Schema.define(version: 2022_02_21_155251) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "attendances", "events"
-  add_foreign_key "attendances", "users"
 end

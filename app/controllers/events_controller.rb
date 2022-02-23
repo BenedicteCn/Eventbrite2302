@@ -1,26 +1,32 @@
 class EventsController < ApplicationController
 
-  def new
-    @event = Event.new
+  def index
+    @event = Event.all.sample
+    @events = Event.all
   end
 
   def show
     @event = Event.find(params[:id])
   end
 
+  def new
+    @event = Event.new
+  end
+
   def create
-    @event = Gossip.new(
-            title: params[:title],
-            description: params[:description],
-            location: params[:location],
-            price: params[:price],
-            start_date: params[:start_date],
-            end_date: params[:start_date],
-            duration: params[:duration])
-      if @event.save
-        redirect_to :controller => 'event', :action => 'show', id: @event.id
-      else
-        render :action => 'new'
-      end
+    @event = Event.new(
+      'start_date' => params[:start_date],
+      'duration' => params[:duration],
+      'title' => params[:title],
+      'description' => params[:description],
+      'price' => params[:price],
+      'location' => params[:location],
+      'admin_id' => current_user.id)
+
+    if @event.save
+      redirect_to event_path(@event.id)
+    else
+      render 'new'
+    end
   end
 end

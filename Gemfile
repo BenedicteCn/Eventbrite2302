@@ -73,4 +73,6 @@ gem 'dotenv-rails'
 
 gem 'devise'
 
-gem 'binding_of_caller', '~> 0.7.2'
+#gem 'binding_of_caller', '~> 0.7.2'
+
+gem 'stripe'
